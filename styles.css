@@ -1,0 +1,147 @@
+/* Reset margins and paddings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic Styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header and Footer Styling */
+header,
+footer {
+    background-color: #b8e1dd; /* Pastel color for header and footer */
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navigation Styling */
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    background-color: #c3aed6; /* Pastel color for navigation bar */
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #d3cddf; /* Hover effect for links */
+    transition: background-color 0.3s ease;
+}
+
+/* Main Content Layout */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between sections */
+    margin: 20px;
+}
+
+aside {
+    width: 25%; /* Sidebar width */
+}
+
+section {
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+section:last-child {
+    margin-right: 0;
+}
+
+/* Buttons Styling */
+button {
+    background-color: #FFB3BA; /* Pastel pink */
+    color: white;
+    padding: 10px 20px; /* Updated padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #FF9AA2; /* Darker pastel pink */
+    transition: background-color 0.3s ease;
+}
+
+/* Form Table Styling */
+form table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+form table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+form table input[type="text"],
+form table input[type="email"],
+form table input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form table input[type="submit"] {
+    background-color: #FFB3BA; /* Pastel pink */
+    color: white;
+    padding: 10px 20px; /* Updated padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form table input[type="submit"]:hover {
+    background-color: #FF9AA2; /* Darker pastel pink */
+    transition: background-color 0.3s ease;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        margin-top: 1.2em;
+    }
+}
+
+nav {
+    animation: slide 2s ease-in-out infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(20px);
+    }
+}
