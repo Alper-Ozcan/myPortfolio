@@ -10,18 +10,50 @@
 
 <body>
     <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#Hobies">Hobies</a></li>
-                <li><a href="#Goals">Goals</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1 class="welcometr">Web Siteme Hoş Geldiniz</h1>
+        <h1 class="welcomeen">Welcome to My Website</h1>
+        <section class="nav-section">
+            <nav class="navtr">
+                <ul>
+                    <li><a href="#hobies-tr">Hobilerim</a></li>
+                    <li><a href="#goals-tr">Hedeflerim</a></li>
+                    <li><a href="#about-tr">Hakkında</a></li>
+                    <li><a href="#contact-tr">İletişim</a></li>
+                </ul>
+            </nav>
+            <nav class="naven">
+                <ul>
+                    <li><a href="#hobies-en">Hobies</a></li>
+                    <li><a href="#goals-en">Goals</a></li>
+                    <li><a href="#about-en">About</a></li>
+                    <li><a href="#contact-en">Contact</a></li>
+                </ul>
+            </nav>
+            <nav class="navlangswich">
+                <ul>
+                    <button onclick="setLanguage('tr')">TR</button>
+                    <button onclick="setLanguage('en')">EN</button>
+                </ul>
+            </nav>
+        </section>
     </header>
     <main>
-        <section id="Hobies">
+        <section id="hobies-tr" class="Hobies">
+            <h3>Hobilerim</h3>
+            <ul>
+                <li>Fotografçılık</li>
+                <li>Doğa Yürüyüşü</li>
+                <li>Bisiklet Sürme</li>
+                <li>Dansçılık</li>
+                <li>Yüzme</li>
+                <li>Bilgisayar oyunları</li>
+                <li>Oyuncak toplama (figürler, arabalar)</li>
+                <li>Hayvan barınaklarında gönüllülük</li>
+                <li>Ve tabii ki yemek yemek</li>
+            </ul>
+        </section>
+
+        <section id="hobies-en" class="Hobies">
             <h3>My Hobbies</h3>
             <ul>
                 <li>Photography</li>
@@ -35,7 +67,25 @@
                 <li>And of course, eating food</li>
             </ul>
         </section>
-        <section id="Goals">
+        <section id="goals-tr" class="Goals">
+            <h3>Hedefim Microsoft Full-Stack Developer sertifikasını almak.</h3>
+            <h3>Takip edeceğim adımlar şunlar:</h3>
+            <ol>
+                <li>C# ile Programlamaya Giriş</li>
+                <li>Web Geliştirmeye Giriş</li>
+                <li>Performans Optimizasyonu ve Ölçeklenebilirlik</li>
+                <li>Veri Yapıları ve Algoritmalar</li>
+                <li>Veritabanı Entegrasyonu ve Yönetimi</li>
+                <li>Dağıtım ve DevOps</li>
+                <li>Güvenlik ve Kimlik Doğrulama</li>
+                <li>.NET ile Arka Uç Geliştirme</li>
+                <li>Blazor ile Ön Yüz Geliştirme</li>
+                <li>Full-Stack Kodlama Temelleri</li>
+                <li>Full-Stack Entegrasyonu</li>
+                <li>Full-Stack Geliştirici Dönem Projesi</li>
+            </ol>
+        </section>
+        <section id="goals-en" class="Goals">
             <h3>My goal is to get Microsoft Full-Stack Developer certification.</h3>
             <h3>Here are the steps I will follow :</h3>
             <ol>
@@ -53,27 +103,65 @@
                 <li>Full-Stack Developer Capstone Project</li>
             </ol>
         </section>
-        <section id="about">
+
+        <section id="about-tr" class="About">
+            <h2>Hakkında</h2>
+            <p>Hakında bölümü içeriği</p>
+        </section>
+
+        <section id="about-en" class="About">
             <h2>About</h2>
             <p>This is the about page content.</p>
         </section>
-        <section id="contact">
+
+        <section id="contact-tr" class="Contact">
+            <h2>İletişim</h2>
+            <p>İletişim için bana eposta atabilirsiniz...</p>
+            <button id="formButtontr" onclick="onclicktr()">eposta-Gönder</button>
+            <form id="myFormtr" action="myFormtr" method="post" style="display: none;">
+                <table>
+                    <tr>
+                        <td><label for="firstName">Adınız :</label></td>
+                        <td><input type="text" id="firstName" name="firstName" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="lastName">Soyasınız :</label></td>
+                        <td><input type="text" id="lastName" name="lastName" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Eposta Adresiniz:</label></td>
+                        <td><input type="email" id="email" name="email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="phone">Telefon Numaranız:</label></td>
+                        <td><input type="tel" id="phone" name="phone"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="Submit">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+
+        <section id="contact-en" class="Contact">
             <h2>Contact</h2>
             <p>This is the contact page content.</p>
-            <button id="formButton">email-Me</button>
-            <form id="myForm" style="display: none;">
+            <button id="formButtonen" onclick="onclicken()">email-Me</button>
+            <form id="myFormen" action="myFormen" method="post" style="display: none;">
                 <table>
                     <tr>
                         <td><label for="firstName">First Name:</label></td>
-                        <td><input type="text" id="firstName" name="firstName"></td>
+                        <td><input type="text" id="firstName" name="firstName" required></td>
                     </tr>
                     <tr>
                         <td><label for="lastName">Last Name:</label></td>
-                        <td><input type="text" id="lastName" name="lastName"></td>
+                        <td><input type="text" id="lastName" name="lastName" required></td>
                     </tr>
                     <tr>
                         <td><label for="email">Email Address:</label></td>
-                        <td><input type="email" id="email" name="email"></td>
+                        <td><input type="email" id="email" name="email" required></td>
                     </tr>
                     <tr>
                         <td><label for="phone">Phone Number:</label></td>
@@ -87,10 +175,9 @@
                 </table>
             </form>
         </section>
-
     </main>
     <footer>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
+        <p>&copy; 2025 Alper. All rights reserved.</p>
     </footer>
     <script src="scripts.js"></script>
 </body>

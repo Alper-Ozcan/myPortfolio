@@ -1,147 +1,165 @@
-/* Reset margins and paddings */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Basic Styling */
+:root {
+    --navbackgroundcolor: #0fbfdf;
+    --fontcolor: #000;
+    --backgroundcolor: #fff;
+
+}
+
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--backgroundcolor);
+    color: var(--fontcolor);
 }
 
-/* Header and Footer Styling */
 header,
 footer {
-    background-color: #b8e1dd; /* Pastel color for header and footer */
-    color: #333;
+    background-color: var(--backgroundcolor);
+    color: var(--fontcolor);
     text-align: center;
     padding: 20px;
 }
 
-/* Navigation Styling */
-nav ul {
+.nav-section {
     display: flex;
-    justify-content: space-around;
-    background-color: #c3aed6; /* Pastel color for navigation bar */
+    flex-direction: row;
+    justify-content: space-between;
     padding: 10px;
-    margin-bottom: 20px;
+    background-color: var(--navbackgroundcolor);
+    color: var(--fontcolor);
+    border-radius: 20px;
 }
 
-nav ul li {
-    list-style-type: none;
-}
-
-nav ul li a {
-    color: #333;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-nav ul li a:hover {
-    background-color: #d3cddf; /* Hover effect for links */
-    transition: background-color 0.3s ease;
-}
-
-/* Main Content Layout */
-main {
+.nav-section .naven,
+.nav-section .navtr {
     display: flex;
-    flex-direction: column;
-    gap: 20px; /* Space between sections */
-    margin: 20px;
-}
-
-aside {
-    width: 25%; /* Sidebar width */
-}
-
-section {
-    flex-grow: 1;
-    margin-right: 20px;
-}
-
-section:last-child {
-    margin-right: 0;
-}
-
-/* Buttons Styling */
-button {
-    background-color: #FFB3BA; /* Pastel pink */
-    color: white;
-    padding: 10px 20px; /* Updated padding */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #FF9AA2; /* Darker pastel pink */
-    transition: background-color 0.3s ease;
-}
-
-/* Form Table Styling */
-form table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-form table td {
+    justify-content: space-between;
+    align-items: left;
     padding: 10px;
-    border: 1px solid #ddd;
+    background-color: var(--navbackgroundcolor);
+    color: var(--fontcolor);
+    border-radius: 20px;
 }
 
-form table input[type="text"],
-form table input[type="email"],
-form table input[type="tel"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+.nav-section .navlangswich {
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+    align-items: center;
 }
 
-form table input[type="submit"] {
-    background-color: #FFB3BA; /* Pastel pink */
-    color: white;
-    padding: 10px 20px; /* Updated padding */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+.nav-section .naven ul,
+.nav-section .navtr ul {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-form table input[type="submit"]:hover {
-    background-color: #FF9AA2; /* Darker pastel pink */
-    transition: background-color 0.3s ease;
+
+.nav-section .navlangswich ul {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Media Query for Smaller Screens */
+
 @media (max-width: 768px) {
-    main {
+    .nav-section {
+        display: flex;
         flex-direction: column;
     }
 
-    aside {
-        width: 100%;
-        margin-top: 1.2em;
+    /*.nav-section .navlangswich ul,*/
+    .nav-section .naven ul,
+    .nav-section .navtr ul {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
-nav {
-    animation: slide 2s ease-in-out infinite;
+
+main {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
 }
 
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(20px);
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 }
+
+
+.Hobies,
+.Goals,
+.Contact,
+.About {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--navbackgroundcolor);
+    color: var(--fontcolor);
+    border-radius: 20px;
+    list-style-position: inside;
+    line-height: 2; 
+    margin-bottom: 20px; 
+}
+
+footer {
+    display: grid;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--navbackgroundcolor);
+    color: var(--fontcolor);
+}
+
+
+#formButtonen, #formButtontr {
+    width: auto; /* Otomatik genişlik */
+    max-width: 200px; /* Genişlik sınırlaması, örnek olarak 200px */
+    padding: 10px 20px; /* İç dolgu ekleyerek daha şık bir görünüm */
+    text-align: center; /* Yazıyı ortalama */
+}
+
+input[type="submit"] {
+    background-color: #0fbfdf; /* Butonun arka plan rengi */
+    color: #fff; /* Yazı rengi */
+    border: none; /* Kenarlıkları kaldır */
+    border-radius: 10px; /* Yuvarlatılmış köşeler */
+    padding: 10px 20px; /* İç dolgu */
+    font-size: 16px; /* Yazı boyutu */
+    font-weight: bold; /* Yazıyı kalın yap */
+    cursor: pointer; /* Üzerine gelindiğinde el simgesi */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Hover için geçiş efekti */
+}
+
+input[type="submit"]:hover {
+    background-color: #0fa6c3; /* Hover durumundaki arka plan rengi */
+    transform: scale(1.05); /* Hafifçe büyütme efekti */
+}
+
+input[type="submit"]:active {
+    background-color: #0f8faa; /* Tıklandığında arka plan rengi */
+    transform: scale(0.95); /* Tıklandığında hafif küçültme efekti */
+}
+
