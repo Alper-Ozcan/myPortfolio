@@ -90,3 +90,9 @@ document.getElementById("myFormen").addEventListener("submit", function(e) {
         message.remove();
     }, 3000); // 3 saniye sonra kaldırır
 });
+
+
+function toggleMenu() {
+    const menu = document.querySelector('.menu-content');
+    menu.classList.toggle('open'); // "open" sınıfını ekler veya çıkarır
+}

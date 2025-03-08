@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     margin: 0;
     padding: 0;
 }
@@ -8,7 +8,6 @@
     --navbackgroundcolor: #0fbfdf;
     --fontcolor: #000;
     --backgroundcolor: #fff;
-
 }
 
 body {
@@ -26,68 +25,88 @@ footer {
     padding: 20px;
 }
 
-.nav-section {
-    display: flex;
-    flex-direction: row;
+/* .nav-section {
+    position: relative;
+} */
+
+/* Varsayılan tasarım: Büyük ekranlarda */
+.menu-toggle {
+    display: none; /* Büyük ekranlarda toggle düğmesi gizli */
+}
+
+.menu-content {
+    display: flex; /* Toggle düğmesine tıklandığında menü görünür */
+    width: auto;  /*Otomatik genişlik */
+    /*max-width: 200px;*/
+    flex-direction: row; 
     justify-content: space-between;
-    padding: 10px;
     background-color: var(--navbackgroundcolor);
-    color: var(--fontcolor);
-    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
 }
 
-.nav-section .naven,
-.nav-section .navtr {
-    display: flex;
+.menu-content .naven,
+.menu-content .navtr{
     justify-content: space-between;
-    align-items: left;
-    padding: 10px;
-    background-color: var(--navbackgroundcolor);
-    color: var(--fontcolor);
-    border-radius: 20px;
+    align-items: baseline;
 }
 
-.nav-section .navlangswich {
-    display: flex;
-    flex-direction: row;
-    text-align: right;
-    align-items: center;
+.menu-content .naven ul,
+.menu-content .navtr ul{
+    list-style-type: none;
 }
 
-.nav-section .naven ul,
-.nav-section .navtr ul {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.menu-content .naven ul li,
+.menu-content .navtr ul li{
+    display: inline-block; /* Liste öğelerini yatay hizala */
+    margin-right: 10px; 
 }
 
 
-.nav-section .navlangswich ul {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-
+/* Küçük ekranlar (mobil cihazlar) için */
 @media (max-width: 768px) {
-    .nav-section {
-        display: flex;
-        flex-direction: column;
+    .menu-toggle {
+        display: block; /* Toggle menü düğmesi görünür */
+        background-color: var(--navbackgroundcolor);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 0px;
     }
 
-    /*.nav-section .navlangswich ul,*/
-    .nav-section .naven ul,
-    .nav-section .navtr ul {
-        flex-direction: column;
-        align-items: flex-start;
+    .menu-content {
+        display: none; /* Menü varsayılan olarak gizli */
+    }
+
+    .menu-content.open {
+        display: flex; /* Toggle düğmesine tıklandığında menü görünür */
+        width: auto; /* Otomatik genişlik */
+        max-width: 200px;
+        flex-direction: column; /* Menüyü dikey hizala */
+        background-color: var(--navbackgroundcolor);
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+        margin-top: 0px;
+    }
+
+    .menu-content.open .naven ul,
+    .menu-content.open .navtr ul{
+        list-style-type: none;
+    }
+    
+    .menu-content.open .naven ul li,
+    .menu-content.open .navtr ul li{
+        display: list-item;
     }
 }
+
+
 
 
 main {
@@ -105,23 +124,20 @@ main {
     }
 }
 
-
 .Hobies,
 .Goals,
 .Contact,
 .About {
     display: flex;
-    grid-template-columns: 1fr 1fr;
     flex-direction: column;
-    display: flex;
     justify-content: space-between;
     padding: 10px;
     background-color: var(--navbackgroundcolor);
     color: var(--fontcolor);
     border-radius: 20px;
     list-style-position: inside;
-    line-height: 2; 
-    margin-bottom: 20px; 
+    line-height: 2; /* Satır arası yüksekliği */
+    margin-bottom: 20px; /* Bölümler arası boşluk */
 }
 
 footer {
@@ -133,11 +149,10 @@ footer {
     color: var(--fontcolor);
 }
 
-
 #formButtonen, #formButtontr {
     width: auto; /* Otomatik genişlik */
-    max-width: 200px; /* Genişlik sınırlaması, örnek olarak 200px */
-    padding: 10px 20px; /* İç dolgu ekleyerek daha şık bir görünüm */
+    max-width: 200px; /* Genişlik sınırlaması */
+    padding: 10px 20px; /* İç dolgu */
     text-align: center; /* Yazıyı ortalama */
 }
 
@@ -160,6 +175,5 @@ input[type="submit"]:hover {
 
 input[type="submit"]:active {
     background-color: #0f8faa; /* Tıklandığında arka plan rengi */
-    transform: scale(0.95); /* Tıklandığında hafif küçültme efekti */
+    transform: scale(0.95); /* Hafif küçültme efekti */
 }
-

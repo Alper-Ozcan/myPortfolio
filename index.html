@@ -12,7 +12,10 @@
     <header>
         <h1 class="welcometr">Web Siteme Hoş Geldiniz</h1>
         <h1 class="welcomeen">Welcome to My Website</h1>
-        <section class="nav-section">
+    </header>
+    <section class="nav-section">
+        <button class="menu-toggle" onclick="toggleMenu()">☰ Menü</button>
+        <div class="menu-content">
             <nav class="navtr">
                 <ul>
                     <li><a href="#hobies-tr">Hobilerim</a></li>
@@ -35,8 +38,8 @@
                     <button onclick="setLanguage('en')">EN</button>
                 </ul>
             </nav>
-        </section>
-    </header>
+        </div>
+    </section>    
     <main>
         <section id="hobies-tr" class="Hobies">
             <h3>Hobilerim</h3>
@@ -122,19 +125,19 @@
                 <table>
                     <tr>
                         <td><label for="firstName">Adınız :</label></td>
-                        <td><input type="text" id="firstName" name="firstName" required></td>
+                        <td><input type="text" id="firstName" name="firstName" autocomplete="given-name" required></td>
                     </tr>
                     <tr>
                         <td><label for="lastName">Soyasınız :</label></td>
-                        <td><input type="text" id="lastName" name="lastName" required></td>
+                        <td><input type="text" id="lastName" name="lastName" autocomplete="family-name" required></td>
                     </tr>
                     <tr>
                         <td><label for="email">Eposta Adresiniz:</label></td>
-                        <td><input type="email" id="email" name="email" required></td>
+                        <td><input type="email" id="email" name="email" autocomplete="email" autocomplete="email" required></td>
                     </tr>
                     <tr>
                         <td><label for="phone">Telefon Numaranız:</label></td>
-                        <td><input type="tel" id="phone" name="phone"></td>
+                        <td><input type="tel" id="phone" name="phone" autocomplete="phone"></td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -153,19 +156,19 @@
                 <table>
                     <tr>
                         <td><label for="firstName">First Name:</label></td>
-                        <td><input type="text" id="firstName" name="firstName" required></td>
+                        <td><input type="text" id="firstName" name="firstName" autocomplete="given-name" required></td>
                     </tr>
                     <tr>
                         <td><label for="lastName">Last Name:</label></td>
-                        <td><input type="text" id="lastName" name="lastName" required></td>
+                        <td><input type="text" id="lastName" name="lastName" autocomplete="family-name" required></td>
                     </tr>
                     <tr>
                         <td><label for="email">Email Address:</label></td>
-                        <td><input type="email" id="email" name="email" required></td>
+                        <td><input type="email" id="email" name="email" autocomplete="email" required></td>
                     </tr>
                     <tr>
                         <td><label for="phone">Phone Number:</label></td>
-                        <td><input type="tel" id="phone" name="phone"></td>
+                        <td><input type="tel" id="phone" name="phone" autocomplete="phone"></td>
                     </tr>
                     <tr>
                         <td colspan="2">
